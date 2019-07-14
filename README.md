@@ -8,7 +8,7 @@ The API information is:
 https://aqicn.org/api
 
 The bot is:
-t.me/pollutionairbot
+[Telegram](t.me/pollutionairbot)
 
 
 ## How must work on Telegram
