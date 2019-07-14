@@ -9,3 +9,10 @@ https://aqicn.org/api
 
 The bot is:
 t.me/pollutionairbot
+
+
+## How must work on Telegram
+
+**/start** : Begin the bot
+
+**/city** : Put the name of the city that you want to now the pollution. It will bring infomation every 8 hours.
