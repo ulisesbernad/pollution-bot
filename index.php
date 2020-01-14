@@ -23,11 +23,26 @@ curl_setopt($ch, CURLOPT_URL, 'https://api.telegram.org/'.$token.'/getupdates');
 curl_setopt($ch, CURLOPT_HEADER, 0);
 
 // Captura la URL y la envía al navegador
-curl_exec($ch);
+//We will use it soon
+$string=curl_exec($ch);
+
+echo '<br /><br /><br /><br /><br />';
+
+//JSON format example:
+//$string='{"ok":true,"result":[{"update_id":832768844,"message":{"message_id":36,"from":{"id":173379172,"is_bot":false,"first_name":"Fran","language_code":"es"},"chat":{"id":173379172,"first_name":"Fran","type":"private"},"date":1578999327,"text":"Madrid"}}]}';
+//echo $string;
+//Don't work
+echo '<br />';
+//$info = json_decode($string);
+$info=json_decode($string, true);
+
+print_r($info);
 
 
 
+//print_r($info->result);
 
+//echo $info->result[0];
 
 
 
