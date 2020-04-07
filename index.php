@@ -1,7 +1,7 @@
 <?php
 
 #Format city must be lowercase
-#
+
 echo "This is Telegram Polution BOT";
 
 
@@ -15,28 +15,30 @@ echo "This is Telegram Polution BOT";
 
 $token='bot849910385:AAHwtSA3u7e305iC54SNJryop-7qcgGj9WM';
 
+
 //Getting data from Telegram
 $ch = curl_init();
 
 // Establece la URL y otras opciones apropiadas
 curl_setopt($ch, CURLOPT_URL, 'https://api.telegram.org/'.$token.'/getupdates');
 curl_setopt($ch, CURLOPT_HEADER, 0);
+//Al parecer sin esta opcion no podemos ver la array.
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 // Captura la URL y la envía al navegador
 //We will use it soon
 $string=curl_exec($ch);
 
-echo '<br /><br /><br /><br /><br />';
-
 //JSON format example:
-//$string='{"ok":true,"result":[{"update_id":832768844,"message":{"message_id":36,"from":{"id":173379172,"is_bot":false,"first_name":"Fran","language_code":"es"},"chat":{"id":173379172,"first_name":"Fran","type":"private"},"date":1578999327,"text":"Madrid"}}]}';
 //echo $string;
 //Don't work
 echo '<br />';
 //$info = json_decode($string);
-$info=json_decode($string, true);
+$string=json_decode($string, true);
 
-print_r($info);
+echo $string;
+print_r($string);
+echo '<br />';
 
 
 
@@ -69,7 +71,6 @@ $city='berlin';
 
 
 
-#
 // CONEXION CON API DE WAQI
 $ch = curl_init();
 
@@ -83,7 +84,7 @@ curl_exec($ch);
 
 
 //Send the mesage to Telegram
-die();
+
 
 $text='texto de prueba';
 
