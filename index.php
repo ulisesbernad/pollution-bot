@@ -39,8 +39,10 @@ $string=json_decode($string, true);
 echo $string;
 print_r($string);
 echo '<br />';
+echo '<br />';
 
-
+$oks= $string['result'];
+echo $oks;
 
 //print_r($info->result);
 
